@@ -1,6 +1,6 @@
 function _G.ReloadConfig()
-  for name,_ in pairs(package.loaded) do
-    if name:match('^user') and not name:match('nvim-tree') then
+  for name, _ in pairs(package.loaded) do
+    if name:match("^user") and not name:match("nvim-tree") then
       package.loaded[name] = nil
     end
   end
@@ -10,7 +10,12 @@ function _G.ReloadConfig()
 end
 
 vim.lsp.config("lua_ls", {
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { "vim" }}}}})
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { "vim" },
+      },
+    },
+  },
+})
+
