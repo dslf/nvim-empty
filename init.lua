@@ -21,6 +21,6 @@ require("lazy").setup({
   require("plugins.todo-comments"),
 })
 
-require("zx.options")
-require("zx.keymaps")
-require("zx.reload")
+require("ds.options")
+require("ds.keymaps")
+require("ds.reload")
