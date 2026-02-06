@@ -12,11 +12,17 @@ vim.o.autoindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+require("kanagawa").setup({
+  commentStyle = { italic = false },
+  keywordStyle = { italic = false },
+})
+
 -- vim.cmd([[colorscheme retrobox]])
+-- vim.cmd([[colorscheme nightfly]])
+vim.cmd([[colorscheme kanagawa-wave]])
 
 vim.opt.termguicolors = true
 vim.g.nightflyItalics = false
-vim.cmd([[colorscheme nightfly]])
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
@@ -25,3 +31,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- NOTE: Neovide stuff
+-- vim.o.guifont = 'Comic mono:h14:#e-subpixelantialias:#h-full'
+-- vim.o.guifont = 'Comic mono:h13:#e-subpixelantialias:#h-full'
+-- vim.o.guifont = 'Fira Code Retina:h12:#e-subpixelantialias:#h-full'
+-- vim.o.guifont = 'CodeNewRoman Nerd Font Mono:h14:#e-subpixelantialias:#h-full'
+-- vim.o.guifont = 'ComicShannsMono Nerd Font:h13:#e-subpixelantialias:#h-full'
+vim.o.guifont = "ComicCodeLigatures Nerd Font:h12:#e-subpixelantialias:#h-full"
