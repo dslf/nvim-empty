@@ -7,6 +7,7 @@ vim.o.smartcase = true
 vim.g.netw_banner = 0
 vim.o.clipboard = "unnamedplus"
 vim.o.tabstop = 4
+vim.o.shiftwidth = 4
 vim.o.mouse = "a"
 vim.o.autoindent = true
 vim.o.ignorecase = true
@@ -31,6 +32,15 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+
+-- Source - https://stackoverflow.com/a/79435977
+-- Posted by Carson
+-- vim.o.updatetime = 250
+-- vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+--   callback = function()
+--     vim.diagnostic.open_float(nil, { focus = false })
+--   end,
+-- })
 
 -- NOTE: Neovide stuff
 -- vim.o.guifont = 'Comic mono:h14:#e-subpixelantialias:#h-full'

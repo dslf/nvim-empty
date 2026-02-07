@@ -19,6 +19,7 @@ require("lazy").setup({
   require("plugins.lsp-tj"),
   require("plugins.autoformat"),
   require("plugins.todo-comments"),
+  require("plugins.autopairs"),
 })
 
 require("ds.options")
