@@ -13,6 +13,12 @@ vim.o.autoindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+vim.o.cursorline = true
+vim.opt.scrolloff = 10
+vim.opt.wrap = false
+
+vim.o.cmdheight = 0
+
 require("kanagawa").setup({
   commentStyle = { italic = false },
   keywordStyle = { italic = false },
@@ -20,10 +26,15 @@ require("kanagawa").setup({
 
 -- vim.cmd([[colorscheme retrobox]])
 -- vim.cmd([[colorscheme nightfly]])
-vim.cmd([[colorscheme kanagawa-wave]])
+-- vim.cmd([[colorscheme kanagawa-wave]])
+vim.cmd([[colorscheme lunaperche]])
 
 vim.opt.termguicolors = true
 vim.g.nightflyItalics = false
+
+-- Меняю разделитель, надо менять после загрузки цветовой схемы, иначе схема всё перезаписывает
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#444444", bg = "none" })
+vim.api.nvim_set_hl(0, "VertSplit", { fg = "#444444", bg = "none" })
 
 vim.api.nvim_create_autocmd("TextYankPost", {
   desc = "Highlight when yanking (copying) text",
@@ -41,11 +52,3 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 --     vim.diagnostic.open_float(nil, { focus = false })
 --   end,
 -- })
-
--- NOTE: Neovide stuff
--- vim.o.guifont = 'Comic mono:h14:#e-subpixelantialias:#h-full'
--- vim.o.guifont = 'Comic mono:h13:#e-subpixelantialias:#h-full'
--- vim.o.guifont = 'Fira Code Retina:h12:#e-subpixelantialias:#h-full'
--- vim.o.guifont = 'CodeNewRoman Nerd Font Mono:h14:#e-subpixelantialias:#h-full'
--- vim.o.guifont = 'ComicShannsMono Nerd Font:h13:#e-subpixelantialias:#h-full'
-vim.o.guifont = "ComicCodeLigatures Nerd Font:h12:#e-subpixelantialias:#h-full"

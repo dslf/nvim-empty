@@ -23,8 +23,34 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
 vim.api.nvim_set_keymap("n", "<leader><CR>", "<cmd>lua ReloadConfig()<CR>", { noremap = true, silent = false })
+-- vim.api.nvim_set_keymap("t", "Esc", "<C-\\><C-N>", { tnoremap = true })
 
 vim.keymap.set("n", "<C-h>", "<C-w><C-h>", { desc = "Move focus to the left window" })
 vim.keymap.set("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to the right window" })
 vim.keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<C-A-n>", "<cmd>update<cr><cmd>make run<cr>", opts)
+
+vim.keymap.set("n", "<leader>cn", ":cd P:/notes<cr>", { desc = "Change dir to notes folder" })
+vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", { desc = "Change dir to current file dir" })
+
+vim.keymap.set("n", "<M-q>", function() -- <M-q> = alt+q
+  vim.cmd("e P:/notes/quicknotes.txt")
+  vim.cmd("normal! G")
+  local timestamp = os.date(
+    "──────< %Y-%m-%d %H:%M:%S >───────────────────────────────────"
+  )
+  -- vim.api.nvim_put({ timestamp, "" }, "l", true, true)
+end, { desc = "Quick notes" })
+
+vim.keymap.set("n", "<F5>", function()
+  -- vim.cmd("normal! G")
+  local timestamp = os.date("%Y-%m-%d %H:%M:%S")
+  vim.api.nvim_put({ timestamp }, "c", true, true) -- Убрал перенос на новую стоку { timestamp, "" } Каждый элемент этого списка интерпретируется как новая строка.
+  -- vim.cmd("startinsert")
+end, { desc = "Famous notepad date insertion" })
+
+-- vim.keymap.set("n", "<C-A-n", "<cmd>update<cr><cmd>make run<cr>", opts)
+
+-- TODO: find way to get C-BS working
+-- vim.keymap.set("i", "<C-BS>", "<C-w>", opts)

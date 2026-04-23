@@ -8,6 +8,14 @@ return {
         -- return ' ' .. str:sub(1, 1) -- displays only the first character of the mode
       end,
     }
+    local function show_macro_recording()
+      local recording_register = vim.fn.reg_recording()
+      if recording_register == "" then
+        return ""
+      else
+        return "Recording @" .. recording_register
+      end
+    end
 
     local filename = {
       "filename",
@@ -51,7 +59,7 @@ return {
       },
       sections = {
         lualine_a = { mode },
-        lualine_b = { "branch" },
+        lualine_b = { "branch", { "diagnostics" }, { show_macro_recording, color = { fg = "#ff9e64" } } },
         lualine_c = { filename },
         lualine_x = { diagnostics, diff, { "encoding", cond = hide_in_width }, { "filetype", cond = hide_in_width } },
         lualine_y = { "location" },

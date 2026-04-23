@@ -1,5 +1,6 @@
 return { -- Highlight, edit, and navigate code
   "nvim-treesitter/nvim-treesitter",
+
   lazy = false,
   build = ":TSUpdate",
   -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
@@ -33,6 +34,9 @@ return { -- Highlight, edit, and navigate code
       "css",
       "html",
     },
+    -- markdown = {
+    -- enable = true,
+    -- },
     -- Autoinstall languages that are not installed
     auto_install = true,
     highlight = {

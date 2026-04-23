@@ -20,8 +20,12 @@ require("lazy").setup({
   require("plugins.autoformat"),
   require("plugins.todo-comments"),
   require("plugins.autopairs"),
+  require("plugins.markdown"),
+  require("plugins.toggleterm"),
 })
 
 require("ds.options")
 require("ds.keymaps")
 require("ds.reload")
+require("ds.neovide")
+-- require("plugins.indent_line"), require("plugins.noice"),
