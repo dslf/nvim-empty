@@ -13,6 +13,8 @@ vim.o.autoindent = true
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
+-- vim.opt.shell = "pwsh.exe"
+
 vim.o.cursorline = true
 vim.opt.scrolloff = 10
 vim.opt.wrap = false

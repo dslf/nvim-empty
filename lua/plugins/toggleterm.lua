@@ -5,8 +5,10 @@ return {
     require("toggleterm").setup({
       open_mapping = [[<C-\>]],
       insert_mappings = true,
+      shell = "pwsh.exe",
       shade_terminals = false,
-      direction = "vertical",
+      -- direction = "vertical",
+      direction = "float",
       size = function(term)
         if term.direction == "horizontal" then
           return 15
