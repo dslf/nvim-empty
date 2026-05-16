@@ -21,15 +21,15 @@ vim.opt.wrap = false
 
 vim.o.cmdheight = 0
 
-require("kanagawa").setup({
-  commentStyle = { italic = false },
-  keywordStyle = { italic = false },
-})
-
--- vim.cmd([[colorscheme retrobox]])
--- vim.cmd([[colorscheme nightfly]])
+-- require("kanagawa").setup({
+--   commentStyle = { italic = false },
+--   keywordStyle = { italic = false },
+-- })
 -- vim.cmd([[colorscheme kanagawa-wave]])
-vim.cmd([[colorscheme lunaperche]])
+
+vim.cmd([[colorscheme retrobox]])
+-- vim.cmd([[colorscheme nightfly]])
+-- vim.cmd([[colorscheme lunaperche]])
 
 vim.opt.termguicolors = true
 vim.g.nightflyItalics = false

@@ -33,6 +33,12 @@ vim.keymap.set("n", "<C-A-n>", "<cmd>update<cr><cmd>make run<cr>", opts)
 
 vim.keymap.set("n", "<leader>cn", ":cd P:/notes<cr>", { desc = "Change dir to notes folder" })
 vim.keymap.set("n", "<leader>cd", ":cd %:p:h<CR>", { desc = "Change dir to current file dir" })
+vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Float diagnostic" })
+
+-- Delete whole word backwards and forward in Insert mode using Ctrl+Backspace or Ctrl+Delete
+vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true, silent = true })
+vim.keymap.set("i", "c", "<C-H>", "<C-w>", { noremap = true, silent = true })
+vim.keymap.set("i", "<C-Delete>", "<C-o>dw", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<M-q>", function() -- <M-q> = alt+q
   vim.cmd("e P:/notes/quicknotes.txt")
