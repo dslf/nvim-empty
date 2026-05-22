@@ -28,5 +28,6 @@ require("lazy").setup({
   require("plugins.markdown"),
   require("plugins.toggleterm"),
   require("plugins.org-mode"),
+  require("plugins.mini-surround"),
   -- require("plugins.indent_line"), require("plugins.noice"),
 })
