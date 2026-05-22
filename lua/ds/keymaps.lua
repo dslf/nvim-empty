@@ -37,7 +37,7 @@ vim.keymap.set("n", "gl", vim.diagnostic.open_float, { desc = "Float diagnostic"
 
 -- Delete whole word backwards and forward in Insert mode using Ctrl+Backspace or Ctrl+Delete
 vim.keymap.set("i", "<C-BS>", "<C-w>", { noremap = true, silent = true })
-vim.keymap.set("i", "c", "<C-H>", "<C-w>", { noremap = true, silent = true })
+vim.keymap.set({"i", "c"}, "<C-H>", "<C-w>", { noremap = true, silent = true })
 vim.keymap.set("i", "<C-Delete>", "<C-o>dw", { noremap = true, silent = true })
 
 vim.keymap.set("n", "<M-q>", function() -- <M-q> = alt+q
